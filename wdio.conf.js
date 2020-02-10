@@ -22,7 +22,7 @@ exports.config = {
   specs: [
     //'./test/specs/**/*.spec.js',
     //'./test/specs/dayReportCreate.spec.js'
-    //'./test/specs/groups.spec.js'
+    //'./test/specs/groupsOld.spec.js'
     //'./test/specs/quiz.spec.js'
     //'./test/specs/admin.spec.js'
     //'./test/specs/flashCards.spec.js'

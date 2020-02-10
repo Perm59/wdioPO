@@ -1,6 +1,6 @@
 const {expect} = require('chai');
 const {URL_DAILY_REPORTS, pageDiary, pageDiarySelectors} = require('./dailyReports_data');
-const { loginAsAdmin, logout} = require('../actions');
+const { loginAsAdmin, logout} = require('../../actions');
 
 describe('APPROVE DAILY REPORTS', () => {
   before('Login as admin', () => {

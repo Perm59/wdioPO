@@ -1,7 +1,7 @@
 const {expect} = require('chai');
 const {pageUserAbout, pageCreateDayReport, pageDiary, pageUserAboutSelectors,
   pageCreateDayReportSelectors, pageDiarySelectors} = require('./dailyReports_data');
-const { loginAsAdmin, logout} = require('../actions');
+const { loginAsAdmin, logout} = require('../../actions');
 
 
 describe('CREATE DAY REPORT', () => {

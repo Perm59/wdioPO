@@ -1,7 +1,7 @@
-import Page from './Page';
+import Page from '../Page';
 
 
-class LLoginPage extends Page {
+class LoginPage extends Page {
 
   //email = $('//input[@name="email"]'); not working
   get email () {
@@ -19,9 +19,18 @@ class LLoginPage extends Page {
   get h1 () {
     return $('h1');
   }
+
+  login() {
+    this.open();
+    this.email.setValue('lutka@yahoo.com');
+    this.password.setValue('lutka');
+    this.submitBtn.click();
+    browser.pause(3000);
+  }
+
   open() {
     super.open('https://stage.pasv.us/user/login');
   }
 
 }
-export default new LLoginPage();
+export default new LoginPage();

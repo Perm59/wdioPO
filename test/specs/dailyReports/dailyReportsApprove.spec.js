@@ -1,13 +1,13 @@
 const {expect} = require('chai');
 const {URL_DAILY_REPORTS, pageDiary, pageDiarySelectors} = require('./dailyReports_data');
-const { loginAsAdmin, logout} = require('../actions');
+const { loginAsAdmin, logout} = require('../../actions');
 
 describe('APPROVE DAILY REPORTS', () => {
   before('Login as admin', () => {
     loginAsAdmin();
     browser.pause(1000);
   });
-
+    
   it('should open Create day report page', () => {
     browser.url(URL_DAILY_REPORTS);
     browser.pause(1000);
@@ -26,17 +26,17 @@ describe('APPROVE DAILY REPORTS', () => {
     expect(actual).equal(expected);
   });
 
-  it('should choose click Like button', () => {
-    const element = $(pageDiarySelectors.likeButton);
+  it('should choose click Approve button', () => {
+    const element = $(pageDiarySelectors.approveButton);
     element.click();
-    //browser.pause(5000);
-    const actual = $(pageDiarySelectors.iLikeThisButton).isExisting();
+    browser.pause(1000);
+    const actual = $(pageDiarySelectors.approvedButton).isExisting();
     expect(actual).equal(true);
   });
 
   it('should have a correct notification', () => {
-    const actual = $(pageDiarySelectors.notificationILikeThis).getText();
-    const expected = pageDiary.notificationILikeThis;
+    const actual = $(pageDiarySelectors.notificationApproved).getText();
+    const expected = pageDiary.notificationApproved;
     expect(actual).equal(expected);
   });
 
@@ -44,5 +44,5 @@ describe('APPROVE DAILY REPORTS', () => {
     logout();
     browser.pause(1000);
   });
-    
-});   
+
+});

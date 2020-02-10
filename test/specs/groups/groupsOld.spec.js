@@ -2,9 +2,9 @@ const {expect} = require('chai');
 
 const {URL_LOGIN, progressMonitorLinksSelectors, pageGroups,
   pageCreateNewGroup, pageLoginSelectors, pageGroupsSelectors,
-  pageCreateNewGroupSelectors} = require('../data');
+  pageCreateNewGroupSelectors} = require('../../data');
 
-describe('CREATE DAY REPORT', () => {
+describe('Groups', () => {
   before('Login as admin', () => {
     browser.url(URL_LOGIN);
     $(pageLoginSelectors.emailInput).setValue('lutka@yahoo.com');
