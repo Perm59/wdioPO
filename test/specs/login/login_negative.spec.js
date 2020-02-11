@@ -20,7 +20,7 @@ describe('LOGIN (negative)', () => {
   });
 
   it('should fill out password field', () => {
-    LoginPage.password.setValue('lutka+');
+    LoginPage.password.setValue('lutka++++++++');
   });
 
   it('should click submit button', () => {
@@ -30,6 +30,12 @@ describe('LOGIN (negative)', () => {
 
   it('should check h1 title', () => {
     expect(LoginPage.h1.getText()).equal('User Login');
+  });
+
+  it('should have a correct notification', () => {
+    const actual = $('//h4[contains(text(),"Auth failed")]').getText();
+    const expected = 'Auth failed';
+    expect(actual).equal(expected);
   });
 
 });
