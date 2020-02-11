@@ -7,7 +7,6 @@ describe('GROUPS PAGE', () => {
   before( () => {
     LoginPage.login();
     browser.pause(5000);
-
   });
 
   // Progress Monitor hyperlinks bar

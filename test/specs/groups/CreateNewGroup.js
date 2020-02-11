@@ -1,6 +1,6 @@
 import Page from '../Page';
 
-class CreateNewGroupPage extends Page {
+class CreateNewGroupPage  extends Page {
   get h1 () {
     return $('h1');
   }
