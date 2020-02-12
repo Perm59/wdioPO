@@ -3,6 +3,10 @@ import Page from '../Page';
 
 class LoginPage extends Page {
 
+  get h1 () {
+    return $('//h1[contains(text(),"User Login")]');
+  }
+
   //email = $('//input[@name="email"]'); not working
   get email () {
     return $('//input[@name="email"]');
@@ -14,10 +18,6 @@ class LoginPage extends Page {
 
   get submitBtn () {
     return $('//button[@type="submit"]');
-  }
-
-  get h1 () {
-    return $('h1');
   }
 
   login() {

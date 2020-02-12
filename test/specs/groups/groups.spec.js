@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import LoginPage from '../login/LoginPage';
 import GroupsPage from './GroupsPage';
-import CreateNewGroupPage from  './CreateNewGroup';
+import CreateNewGroupPage from './CreateNewGroupPage';
 
 describe('GROUPS PAGE', () => {
   before( () => {
@@ -17,7 +17,7 @@ describe('GROUPS PAGE', () => {
   });
 
   it('should go to Groups Page', () => {
-    expect(GroupsPage.h1.getText()).eq('Groups');
+    expect(GroupsPage.h1.getText()).equal('Groups');
     browser.pause(1000);
   });
 

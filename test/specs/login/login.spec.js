@@ -11,13 +11,13 @@ describe('LOGIN (positive)', () => {
   it('should have correct title', () => {
     const actual = LoginPage.h1.getText();
     const expected = 'User Login';
-    expect(actual).eq(expected);
+    expect(actual).equal(expected);
   });
 
   it('should fill out email field', () => {
 
     //if we use as method email() then we have write: email() function in LoginPage.js,
-    //if we use email as email (svojstvo) then we have to write: get email() in LoginPage.js
+    //if we use email as email (svijstvo/property) then we have to write: get email() in LoginPage.js
     LoginPage.email.setValue('lutka@yahoo.com');  //get email(){} in LoginPage.js
     //LLoginPage.email().setValue('lutka@yahoo.com'); // email(){} in LoginPage.js
   });
