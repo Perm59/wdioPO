@@ -1,48 +1,46 @@
-const {expect} = require('chai');
-const {URL_DAILY_REPORTS, pageDiary, pageDiarySelectors} = require('./dailyReports_data');
-const { loginAsAdmin, logout} = require('../../actions');
+import { expect } from 'chai';
+import LoginPage from '../login/LoginPage';
+import DailyReportsPage from "./DailyReportsPage";
 
 describe('APPROVE DAILY REPORTS', () => {
-  before('Login as admin', () => {
-    loginAsAdmin();
+  before(() => {
+    LoginPage.login();
+    browser.pause(5000);
+  });
+
+  // Progress Monitor hyperlinks bar
+  it('should choose click hyperlink Diary', () => {
+    const element = $('a[qa="diary-link"]');
+    //expect(element.isExisting()).equal(true);
+    element.click();
     browser.pause(1000);
   });
 
-  it('should open Create day report page', () => {
-    browser.url(URL_DAILY_REPORTS);
-    browser.pause(1000);
-  });
-
-  //test Daily reports page
+  //test Daily Reports page
   it('should have a correct heading', () => {
-    const actual = $(pageDiarySelectors.h1).getText();
-    const expected = pageDiary.h1;
+    const actual = DailyReportsPage.h1.getText();
+    const expected = 'Daily reports';
     expect(actual).equal(expected);
   });
 
   it('should have a correct notification', () => {
-    const actual = $(pageDiarySelectors.notification).getText();
-    const expected = pageDiary.notification;
+    const actual = DailyReportsPage.notification.getText();
+    const expected = 'Get last (50) day reports';
     expect(actual).equal(expected);
   });
 
   it('should choose click Like button', () => {
-    const element = $(pageDiarySelectors.likeButton);
+    const element = DailyReportsPage.likeButton;
     element.click();
     //browser.pause(5000);
-    const actual = $(pageDiarySelectors.iLikeThisButton).isExisting();
+    const actual = DailyReportsPage.iLikeThisButton.isExisting();
     expect(actual).equal(true);
   });
 
   it('should have a correct notification', () => {
-    const actual = $(pageDiarySelectors.notificationILikeThis).getText();
-    const expected = pageDiary.notificationILikeThis;
+    const actual = DailyReportsPage.notificationILikeThis.getText();
+    const expected = 'Diary Like. Success';
     expect(actual).equal(expected);
   });
 
-  after('Logout', () => {
-    logout();
-    browser.pause(1000);
-  });
-    
-});   
+});

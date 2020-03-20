@@ -1,7 +1,7 @@
 import Page from '../Page';
 
 
-class GroupsPage extends Page {
+export class GroupsPage extends Page {
   get h1 () {
     return $('h1');
   }

@@ -52,4 +52,5 @@ const pageDiarySelectors = {
   notificationDelete: 'h4*=Diary deleted',
 };
 
-module.exports  = { HOST, URL_DAY_REPORT, URL_DAILY_REPORTS, pageUserAbout, pageDiary, pageCreateDayReport, pageUserAboutSelectors, pageCreateDayReportSelectors, pageDiarySelectors};
+//export default  dailyReports_data;  ????
+//module.exports  = { HOST, URL_DAY_REPORT, URL_DAILY_REPORTS, pageUserAbout, pageDiary, pageCreateDayReport, pageUserAboutSelectors, pageCreateDayReportSelectors, pageDiarySelectors};
